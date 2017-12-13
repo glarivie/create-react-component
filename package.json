@@ -1,0 +1,16 @@
+{
+  "name": "create-react-component",
+  "version": "1.0.1",
+  "description": "Command line interface to initialize empty ES8 React components",
+  "main": "src/main.js",
+  "repository": "git@github.com:hqro/create-react-component.git",
+  "author": "Guillaume L. <glarivie@student.42.fr>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "commander": "^2.12.2"
+  },
+  "bin": {
+    "create-react-component": "bin/create-react-component.js"
+  }
+}
