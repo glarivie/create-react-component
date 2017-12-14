@@ -1,6 +1,6 @@
 {
   "name": "pop-react-component",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Command line interface to initialize empty ES8 React components",
   "main": "src/main.js",
   "repository": "git@github.com:hqro/pop-react-component.git",
