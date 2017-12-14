@@ -8,26 +8,26 @@ const { promisify } = require('util')
 
 const { version } = require('../package.json')
 const templates = require('../src/templates')
+const { checkProgramArguments } = require('../src/check')
 
 program
   .version(version)
-  .option('--name <name>', 'Component name', 'Test')
-  .option('--dest <path>', 'Specify component destination (default: current path)', process.cwd())
-  .option('--statefull', 'Overide default stateless component template', false)
-  .option('--redux', 'Connect your component with Redux', false)
-  .option('--scss', 'Create SCSS stylesheet', false)
+  .option('-n, --name <name>', 'Component name', 'Test')
+  .option('-d, --dest <path>', 'Specify component destination (default: current path)', process.cwd())
+  .option('-F, --statefull', 'Overide default stateless component template', false)
+  .option('-X, --redux', 'Connect your component with Redux', false)
+  .option('-S, --scss', 'Create SCSS stylesheet', false)
   .parse(process.argv)
 
 const { dest, name, scss, statefull, redux } = program
 const destination = path.resolve(dest)
 const fullPath = `${destination}/${name}`
 
-if (!fs.existsSync(fullPath)) {
-  fs.mkdirSync(fullPath) // Create component folder
-} else {
-  console.error(`File ${name} already exists at ${destination}`)
-  process.exit(1)
-}
+// Check program arguments
+checkProgramArguments(name, destination) // Exit program on check failed
+
+// Create component folder
+fs.mkdirSync(fullPath)
 
 // Create component index file
 fs.writeFileSync(`${fullPath}/index.js`, templates.generateIndex(name))
