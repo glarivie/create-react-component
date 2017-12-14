@@ -1,4 +1,4 @@
-# create-react-component
+# pop-react-component
 
 Command line interface to initialize empty ES8 React components
 
@@ -6,14 +6,14 @@ Command line interface to initialize empty ES8 React components
 ## Installation
 
 ```bash
-npm install --global create-react-component
+npm install --global pop-react-component
 ```
 
 
 ## Usage information
 
 ```bash
-  Usage: create-react-component [options]
+  Usage: pop [options]
 
 
   Options:
@@ -32,5 +32,15 @@ npm install --global create-react-component
 
 ```bash
 cd src/components
-create-react-component --name SearchInput --statefull --scss --redux
+pop --name SearchInput --statefull --scss --redux
+```
+
+Output:
+
+```bash
+  Test
+  ├── Test.js
+  ├── Test.css
+  ├── Test.scss
+  └── index.js
 ```
