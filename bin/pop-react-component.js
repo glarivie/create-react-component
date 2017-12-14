@@ -12,7 +12,7 @@ const { checkProgramArguments } = require('../src/check')
 
 program
   .version(version)
-  .option('-n, --name <name>', 'Component name', 'Test')
+  .option('-n, --name <name>', 'Component name')
   .option('-d, --dest <path>', 'Specify component destination (default: current path)', process.cwd())
   .option('-F, --statefull', 'Overide default stateless component template', false)
   .option('-X, --redux', 'Connect your component with Redux', false)
