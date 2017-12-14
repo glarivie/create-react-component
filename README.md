@@ -18,21 +18,23 @@ npm install --global pop-react-component
 
   Options:
 
-    -V, --version   Output the version number
-    --name <name>   Component name (default: Test)
-    --dest <path>   Component destination (default: current path)
-    --statefull     Overide default stateless component template
-    --redux         Connect your component with Redux
-    --scss          Create SCSS stylesheet
-    -h, --help      Output usage information
+    -V, --version       Output the version number
+    -n, --name <name>   Component name (default: Test)
+    -d, --dest <path>   Component destination (default: current path)
+    -F, --statefull     Overide default stateless component template
+    -X, --redux         Connect your component with Redux
+    -S, --scss          Create SCSS stylesheet
+    -h, --help          Output usage information
 ```
 
 
 ## Example
 
+Generate a statefull component connected to the Redux store and using SCSS stylesheet:
+
 ```bash
 cd src/components
-pop --name SearchInput --statefull --scss --redux
+pop -n MyComponent -SFX
 ```
 
 Output:
