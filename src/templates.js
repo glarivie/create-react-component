@@ -70,6 +70,7 @@ const generateComponentFooter = (name, redux) => {
       "const mapDispatchToProps = dispatch => ({})",
       "",
       `export default connect(mapStateToProps, mapDispatchToProps)(${name})`,
+      "",
     ].join('\n')
   }
 
