@@ -22,8 +22,6 @@ const { dest, name, scss, statefull, redux } = program
 const destination = path.resolve(dest)
 const fullPath = `${destination}/${name}`
 
-console.log({ dest, name, scss, statefull, redux })
-
 if (!fs.existsSync(fullPath)) {
   fs.mkdirSync(fullPath) // Create component folder
 } else {

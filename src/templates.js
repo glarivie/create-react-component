@@ -32,7 +32,6 @@ const generateComponentHead = (name, statefull, redux) => {
 }
 
 const generateComponentBody = (name, statefull) => {
-  console.log('generateComponentBody', { name, statefull })
   if (statefull) {
     return [
       `class ${name} extends Component {`,
