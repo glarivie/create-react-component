@@ -22,9 +22,13 @@ const generateComponentHead = (name, statefull, redux, styleExt) => {
     "",
   ]
 
-  return Boolean(styleExt)
-    ? head.join('\n')
-    : head.concat(`import './${name}.${styleExt}'`).concat('').join('\n')
+  switch (styleExt) {
+    case 'scss':
+    case 'css':
+      return head.concat(`import './${name}.${styleExt}'`).concat('').join('\n')
+    default:
+      return head.join('\n')
+  }
 }
 
 const generateComponentBody = (name, statefull) => {

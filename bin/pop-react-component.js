@@ -24,7 +24,7 @@ const { dest, name, css, scss, statefull, redux } = program
 const destination = path.resolve(dest)
 const fullPath = `${destination}/${name}`
 
-let styleExt = null
+let styleExt = ''
 
 // Check program arguments
 checkProgramArguments(name, destination) // Exit program on check failed
