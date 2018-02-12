@@ -16,12 +16,15 @@ program
   .option('-d, --dest <path>', 'Specify component destination (default: current path)', process.cwd())
   .option('-F, --statefull', 'Overide default stateless component template', false)
   .option('-X, --redux', 'Connect your component with Redux', false)
+  .option('-C, --css', 'Create CSS stylesheet', false)
   .option('-S, --scss', 'Create SCSS stylesheet', false)
   .parse(process.argv)
 
-const { dest, name, scss, statefull, redux } = program
+const { dest, name, css, scss, statefull, redux } = program
 const destination = path.resolve(dest)
 const fullPath = `${destination}/${name}`
+
+let styleExt = null
 
 // Check program arguments
 checkProgramArguments(name, destination) // Exit program on check failed
@@ -33,13 +36,18 @@ fs.mkdirSync(fullPath)
 fs.writeFileSync(`${fullPath}/index.js`, templates.generateIndex(name))
 
 // Create stylesheet file
-fs.writeFileSync(`${fullPath}/${name}.css`, templates.generateStylesheet(name))
-
-if (program.scss)
+if (program.scss) {
+  styleExt = 'scss'
   fs.writeFileSync(`${fullPath}/${name}.scss`, templates.generateStylesheet(name))
+}
+
+if (program.css) {
+  styleExt = 'css'
+  fs.writeFileSync(`${fullPath}/${name}.css`, templates.generateStylesheet(name))
+}
 
 // Create component file
-fs.writeFileSync(`${fullPath}/${name}.js`, templates.generateComponent(name, Boolean(statefull), Boolean(redux)))
+fs.writeFileSync(`${fullPath}/${name}.js`, templates.generateComponent(name, Boolean(statefull), Boolean(redux), styleExt))
 
 promisify(exec)(`ls -l ${fullPath}`)
   .then(({ stdout }) => {

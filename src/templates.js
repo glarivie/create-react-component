@@ -1,3 +1,5 @@
+import { isNil } from 'lodash'
+
 const generateIndex = name => `export { default } from './${name}'`
 
 const generateStylesheet = name => [
@@ -6,29 +8,25 @@ const generateStylesheet = name => [
   "}",
 ].join('\n')
 
-const generateComponentHead = (name, statefull, redux) => {
+const generateComponentHead = (name, statefull, redux, styleExt) => {
   const react = statefull ? 'React, { Component }' : 'React'
 
-  if (redux) {
-    return [
-      `import ${react} from 'react'`,
-      "import PropTypes from 'prop-types'",
-      "import { connect } from 'react-redux'",
-      "// import { get } from 'lodash'",
-      "",
-      "// import actions from '../../actions'",
-      `import './${name}.css'`,
-      "",
-    ].join('\n')
-  }
-
-  return [
+  const head = redux ? [
+    `import ${react} from 'react'`,
+    "import PropTypes from 'prop-types'",
+    "import { connect } from 'react-redux'",
+    "// import { get } from 'lodash'",
+    "",
+    "// import actions from '../../actions'",
+  ] : [
     `import ${react} from 'react'`,
     "import PropTypes from 'prop-types'",
     "",
-    `import './${name}.css'`,
-    "",
-  ].join('\n')
+  ]
+
+  return isNil(styleExt)
+    ? head.join('\n')
+    : head.concat(`import './${name}.${styleExt}'`).concat('').join('\n')
 }
 
 const generateComponentBody = (name, statefull) => {
@@ -76,8 +74,8 @@ const generateComponentFooter = (name, redux) => {
   return `export default ${name}`
 }
 
-const generateComponent = (name, statefull, redux) => [
-  generateComponentHead(name, statefull, redux),
+const generateComponent = (name, statefull, redux, styleExt) => [
+  generateComponentHead(name, statefull, redux, styleExt),
   generateComponentBody(name, statefull),
   generateComponentFooter(name, redux),
 ].join('\n')

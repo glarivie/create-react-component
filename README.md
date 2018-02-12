@@ -23,6 +23,7 @@ npm install --global pop-react-component
     -d, --dest <path>   Component destination (default: current path)
     -F, --statefull     Overide default stateless component template
     -X, --redux         Connect your component with Redux
+    -C, --css           Create CSS stylesheet
     -S, --scss          Create SCSS stylesheet
     -h, --help          Output usage information
 ```
@@ -34,7 +35,7 @@ Generate a statefull component connected to the Redux store and using SCSS style
 
 ```bash
 cd src/components
-pop -n MyComponent -SFX
+pop -n MyComponent -CSFX
 ```
 
 Output:
