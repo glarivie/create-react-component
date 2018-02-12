@@ -1,5 +1,3 @@
-import { isNil } from 'lodash'
-
 const generateIndex = name => `export { default } from './${name}'`
 
 const generateStylesheet = name => [
@@ -24,7 +22,7 @@ const generateComponentHead = (name, statefull, redux, styleExt) => {
     "",
   ]
 
-  return isNil(styleExt)
+  return Boolean(styleExt)
     ? head.join('\n')
     : head.concat(`import './${name}.${styleExt}'`).concat('').join('\n')
 }
