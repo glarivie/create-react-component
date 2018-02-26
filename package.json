@@ -1,6 +1,6 @@
 {
   "name": "@hqro/create-react-component",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Command line interface to initialize empty ES8 React & React Native components",
   "main": "src/main.js",
   "repository": "git@github.com:hqro/create-react-component.git",
