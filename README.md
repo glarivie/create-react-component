@@ -1,19 +1,19 @@
-# pop-react-component
+# create-react-component
 
-Command line interface to initialize empty ES8 React components
+Command line interface to initialize empty ES8 React and React Native components
 
 
 ## Installation
 
 ```bash
-npm install --global pop-react-component
+npm install --global @hqro/create-react-component
 ```
 
 
 ## Usage information
 
 ```bash
-  Usage: pop [options]
+  Usage: crc [options]
 
 
   Options:
@@ -35,7 +35,7 @@ Generate a statefull component connected to the Redux store and using SCSS style
 
 ```bash
 cd src/components
-pop -n MyComponent -CSFX
+crc -n MyComponent -CSFX
 ```
 
 Output:
