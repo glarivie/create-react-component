@@ -1,7 +1,7 @@
 const statelessMobileRedux = name => [
   `import React from 'react'`,
   "import PropTypes from 'prop-types'",
-  "import { View, Text } from 'react-native'"
+  "import { View, Text } from 'react-native'",
   "import { connect } from 'react-redux'",
   "// import { get } from 'lodash'",
   "",
@@ -26,7 +26,7 @@ const statelessMobileRedux = name => [
 const statelessMobile = name => [
   `import React from 'react'`,
   "import PropTypes from 'prop-types'",
-  "import { View, Text } from 'react-native'"
+  "import { View, Text } from 'react-native'",
   "",
   `import styles from './${name}.styles'`,
   "",
