@@ -4,11 +4,6 @@ const {
   statelessWeb,
   statefullWebRedux,
   statefullWeb,
-  mobileStylesheet,
-  statelessMobileRedux,
-  statelessMobile,
-  statefullMobileRedux,
-  statefullMobile,
 } = require('./web')
 
 const {
