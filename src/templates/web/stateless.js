@@ -1,0 +1,45 @@
+const statelessWebRedux = (name, ext = 'css') => [
+  `import React from 'react'`,
+  "import PropTypes from 'prop-types'",
+  "import { connect } from 'react-redux'",
+  "// import { get } from 'lodash'",
+  "",
+  "// import actions from 'actions'",
+  `import styles from './${name}.${ext}'`,
+  "",
+  `const ${name} = () => (`,
+  `  <div className={styles.${name}}>`,
+  `    <span>${name} stateless component</span>`,
+  "  </div>",
+  ")",
+  "",
+  `${name}.propTypes = {}`,
+  "",
+  "const mapStateToProps = () => ({})",
+  "",
+  "const mapDispatchToProps = dispatch => ({})",
+  "",
+  `export default connect(mapStateToProps, mapDispatchToProps)(${name})`,
+].join('\n')
+
+const statelessWeb = (name, ext = 'css') => [
+  `import React from 'react'`,
+  "import PropTypes from 'prop-types'",
+  "",
+  `import styles from './${name}.${ext}'`,
+  "",
+  `const ${name} = () => (`,
+  `  <div className={styles.${name}}>`,
+  `    <span>${name} stateless component</span>`,
+  "  </div>",
+  ")",
+  "",
+  `${name}.propTypes = {}`,
+  "",
+  `export default ${name}`,
+].join('\n')
+
+module.exports = {
+  statelessWebRedux,
+  statelessWeb,
+}

@@ -1,0 +1,55 @@
+const statefullMobileRedux = name => [
+  `import React, { Component } from 'react'`,
+  "import PropTypes from 'prop-types'",
+  "import { View, Text } from 'react-native'"
+  "import { connect } from 'react-redux'",
+  "// import { get } from 'lodash'",
+  "",
+  "// import actions from 'actions'",
+  `import styles from './${name}.styles'`,
+  "",
+  `class ${name} extends Component {`,
+  "  static propTypes = {}",
+  "",
+  "  render = () => {",
+  "    return (",
+  `      <View style={styles.${name}}>`,
+  `        <Text>${name} statefull component</Text>`,
+  "      </View>",
+  "    )",
+  "  }",
+  "}",
+  "",
+  "const mapStateToProps = () => ({})",
+  "",
+  "const mapDispatchToProps = dispatch => ({})",
+  "",
+  `export default connect(mapStateToProps, mapDispatchToProps)(${name})`,
+].join('\n')
+
+const statefullMobile = name => [
+  `import React, { Component } from 'react'`,
+  "import PropTypes from 'prop-types'",
+  "import { View, Text } from 'react-native'"
+  "",
+  `import styles from './${name}.styles'`,
+  "",
+  `class ${name} extends Component {`,
+  "  static propTypes = {}",
+  "",
+  "  render = () => {",
+  "    return (",
+  `      <View style={styles.${name}}>`,
+  `        <Text>${name} statefull component</Text>`,
+  "      </View>",
+  "    )",
+  "  }",
+  "}",
+  "",
+  `export default ${name}`,
+].join('\n')
+
+module.exports = {
+  statefullMobileRedux,
+  statefullMobile,
+}

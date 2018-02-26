@@ -21,8 +21,11 @@ npm install --global @hqro/create-react-component
     -V, --version       Output the version number
     -n, --name <name>   Component name (default: Test)
     -d, --dest <path>   Component destination (default: current path)
-    -F, --statefull     Overide default stateless component template
+    -F, --stateless     Apply stateless component template (default: true)
+    -F, --statefull     Apply statefull component template
     -X, --redux         Connect your component with Redux
+    -W, --web           Create React Web component (default: true)
+    -N, --native        Create React Native component
     -C, --css           Create CSS stylesheet
     -S, --scss          Create SCSS stylesheet
     -h, --help          Output usage information
