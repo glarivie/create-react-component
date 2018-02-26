@@ -21,10 +21,10 @@ npm install --global @hqro/create-react-component
     -V, --version       Output the version number
     -n, --name <name>   Component name (default: Test)
     -d, --dest <path>   Component destination (default: current path)
-    -F, --stateless     Apply stateless component template (default: true)
+    -L, --stateless     Apply stateless component template
     -F, --statefull     Apply statefull component template
     -X, --redux         Connect your component with Redux
-    -W, --web           Create React Web component (default: true)
+    -W, --web           Create React Web component
     -N, --native        Create React Native component
     -C, --css           Create CSS stylesheet
     -S, --scss          Create SCSS stylesheet
@@ -34,11 +34,11 @@ npm install --global @hqro/create-react-component
 
 ## Example
 
-Generate a statefull component connected to the Redux store and using SCSS stylesheet:
+Generate a statefull component connected to the Redux store and using CSS stylesheet:
 
 ```bash
 cd src/components
-crc -n MyComponent -CSFX
+crc -n Test --web --css --statefull --redux
 ```
 
 Output:
@@ -47,6 +47,5 @@ Output:
   Test
   ├── Test.js
   ├── Test.css
-  ├── Test.scss
   └── index.js
 ```

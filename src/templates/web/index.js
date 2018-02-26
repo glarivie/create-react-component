@@ -1,4 +1,4 @@
-const webStylesheet = require('./stylesheet')
+const { webStylesheet } = require('./stylesheet')
 const { statelessWebRedux, statelessWeb } = require('./stateless')
 const { statefullWebRedux, statefullWeb } = require('./statefull')
 

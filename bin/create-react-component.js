@@ -14,10 +14,10 @@ program
   .version(version)
   .option('-n, --name <name>', 'Component name')
   .option('-d, --dest <path>', 'Specify component destination (default: current path)', process.cwd())
-  .option('-L, --stateless', 'Apply stateless component template', true)
+  .option('-L, --stateless', 'Apply stateless component template', false)
   .option('-F, --statefull', 'Apply statefull component template', false)
   .option('-X, --redux', 'Connect your component with Redux', false)
-  .option('-W, --web', 'Create React component', true)
+  .option('-W, --web', 'Create React component', false)
   .option('-N, --native', 'Create React Native component', false)
   .option('-C, --css', 'Create CSS stylesheet', false)
   .option('-S, --scss', 'Create SCSS stylesheet', false)
@@ -26,10 +26,6 @@ program
 const { dest, name } = program
 const destination = path.resolve(dest)
 const fullPath = `${destination}/${name}`
-
-// Avoid multiple component types creation
-if (program.native) program.web = false
-if (program.statefull) program.stateless = false
 
 // Check program arguments
 checkProgramArguments(name, destination) // Exit program on check failed

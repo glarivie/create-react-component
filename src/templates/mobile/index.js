@@ -1,4 +1,4 @@
-const mobileStylesheet = require('./stylesheet')
+const { mobileStylesheet } = require('./stylesheet')
 const { statelessMobileRedux, statelessMobile } = require('./stateless')
 const { statefullMobileRedux, statefullMobile } = require('./statefull')
 
